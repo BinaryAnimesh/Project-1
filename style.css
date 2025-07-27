@@ -1,33 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
 
-
-
-
 body {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background-size: 1000px;
-  
+  overflow: hidden;
   background-image: url("./images/aashiq.jpg");
-  background-position: center center;
-  /* background-repeat: no-repeat; */
-  /* background-size: cover;  */
+  background-size: cover;
+  background-position: center;
+  margin: 0;
 }
 
 .paper {
   background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
   background-size: 500px;
-  background-position: center center;
-  padding: 20px 100px;
-/*  min-width: 800px; */
-  
+  padding: 20px 60px;
+  position: absolute;
   transform: rotateZ(-5deg);
   box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
-  
-  position: absolute;
+  max-width: 90vw;
+  touch-action: none;
+}
+
+.paper.image {
+  padding: 10px;
+}
+.paper.image p {
+  font-size: 28px;
+  text-align: center;
+}
+
+.paper.image img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  user-select: none;
 }
 
 .paper.heart {
@@ -37,138 +48,75 @@ body {
   padding: 0;
   border-radius: 50%;
 }
-
-.paper.image {
-  padding: 10px;
-}
-.paper.image p {
-  font-size: 30px;
-}
-
-.paper.image img {
-  max-width: 90%;
-  height: auto;
-  margin: 10px auto;
-  display: block;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  object-fit: contain;
-  user-select: none;
-}
-
-
 .paper.heart::after {
   content: "";
   background-image: url('https://cdn.pixabay.com/photo/2016/03/31/19/25/cartoon-1294994__340.png');
-  width: 100%;
-  height: 100%;
+  background-size: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.6;
   position: absolute;
   top: 0;
   left: 0;
-  background-size: 150px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  opacity: 0.6;
+  width: 100%;
+  height: 100%;
 }
 
 p {
   font-family: 'Zeyada';
-  font-size: 50px;
+  font-size: 45px;
   font-weight: bold;
   color: rgb(126, 9, 9);
-  opacity: 0.75;
+  opacity: 0.85;
   user-select: none;
-  
-  // filter: drop-shadow(2px 1.5px 1px rgba(0,0,105,0.9));
+  text-align: center;
 }
 
-#toggleMusicButton {
-  background-color: #dd3c5c;
+.control-button, #toggleMusicButton, #yesButton {
+  background-color: #e74c3c;
   border: none;
   color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+  padding: 10px 18px;
+  margin: 4px 6px;
   font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
   border-radius: 5px;
-}
-
-
-.control-button {
-  background-color: #dd3c5c;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
-  border-radius: 5px;
 }
-
-.control-button:hover {
+.control-button:hover, #toggleMusicButton:hover, #yesButton:hover {
   background-color: red;
-}
-
-#toggleMusicButton {
-  background-color: #dd3c5c;
-}
-
-#toggleMusicButton:hover {
-  background-color: red;
-}
-
-#yesButton {
-    padding: 10px;
-    background-color: #e74c3c; /* Love color */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#yesButton {
-  padding: 10px;
-  background-color: #e74c3c; /* Love color */
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .paper1 {
-  margin: 20px;
+  margin: 20px auto;
   padding: 15px;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;
+  max-width: 80vw;
+  
 }
 
 #loveEmojis {
-  font-size: 24px;
+  font-size: 28px;
   margin-top: 10px;
   color: #e74c3c;
 }
 
+/* ✅ Mobile Responsive */
 @media only screen and (max-width: 768px) {
   p {
-    font-size: 24px !important;
+    font-size: 22px !important;
   }
 
   .paper.image p {
-    font-size: 20px !important;
+    font-size: 18px !important;
   }
 
   img {
     width: 100%;
     height: auto;
-    max-height: 220px;
+    max-height: 240px;
   }
 
   .paper {
@@ -176,12 +124,7 @@ p {
     background-size: cover;
   }
 }
-
 html, body {
-  height: 100vh;
-  overflow: hidden; /* ❌ Disable scroll */
-}
-
-body {
-  overflow: hidden; /* prevent scrolling */
+  touch-action: none;
+  overflow: hidden;
 }

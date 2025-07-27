@@ -2,53 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Angel, Be My Bestie ❤️</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Short+Stack&family=Homemade+Apple&display=swap'>
+  <title>KuchuPuchu, Be My Bestie ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
-
-  <style>
-    #yesButton {
-      padding: 10px;
-      background-color: #e74c3c;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .paper {
-      margin: 20px;
-      padding: 15px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .paper1 {
-      margin: 20px;
-      padding: 15px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      position: relative;
-    }
-
-    #loveEmojis {
-      font-size: 24px;
-      margin-top: 10px;
-      color: #e74c3c;
-    }
-
-    .paper image img {
-      width: 100%;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
-  </style>
 </head>
-<body>
+<body ontouchstart="playMusicOnTouch()">
   <div class="paper heart"></div>
 
   <div class="paper">
@@ -199,13 +158,13 @@
   </div>
 
   <script src="./script.js"></script>
-
+  <!-- <script src="./mobile.js"></script> -->
   <script>
-    var hasTouched = false;
-    var isMusicPlaying = false;
-    var audio;
-    var currentSongIndex = 0;
-    var songList = ['f2.mp3','f1.mp3','song.mp3','s1.mp3','s2.mp3','s3.mp3','s4.mp3','s5.mp3'];
+    let hasTouched = false;
+    let isMusicPlaying = false;
+    let audio;
+    let currentSongIndex = 0;
+    const songList = ['f2.mp3','f1.mp3','song.mp3','s1.mp3','s2.mp3','s3.mp3','s4.mp3','s5.mp3'];
 
     function playMusicOnTouch() {
       if (!hasTouched) {
@@ -252,12 +211,12 @@
 
     function showLove() {
       alert("Bestie request sent to Animesh!");
-      var answerSection = document.createElement("div");
+      const answerSection = document.createElement("div");
       answerSection.classList.add("paper1");
-      var answerParagraph = document.createElement("p");
+      const answerParagraph = document.createElement("p");
       answerParagraph.innerHTML = "Thank you Anushka(KuchuPuchu) for becoming my bestie! 😊💖";
       answerSection.appendChild(answerParagraph);
-      var loveEmojis = document.createElement("div");
+      const loveEmojis = document.createElement("div");
       loveEmojis.innerHTML = "💖💕😊";
       loveEmojis.id = "loveEmojis";
       answerSection.appendChild(loveEmojis);
